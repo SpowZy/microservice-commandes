@@ -1,0 +1,25 @@
+server:
+  port: 8082
+
+# Actuator : on active l'accès à /actuator/refresh, /actuator/health, ...
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:commande_db;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# Ici on peut définir des fallback local si le Config Server n'est pas disponible
+# mes-config-ms:
+#   commandes-last: 10

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: microservice-commandes
+  cloud:
+    config:
+      uri: http://localhost:8888  # URL du Spring Cloud Config Server
+      # Si votre config server est sécurisé, ajoutez vos credentials
+      # username: <votre-user>
+      # password: <votre-password>
